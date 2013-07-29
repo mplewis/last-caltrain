@@ -1,5 +1,6 @@
 body {
-    background: url('/img/honey_im_subtle.png');
+    background-color: rgba(221, 221, 221, 1);
+    background-image: url('/img/honey_im_subtle.png');
     background-size: 179px 132px;
     margin: 60px auto;
     width: 600px;
