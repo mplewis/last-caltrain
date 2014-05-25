@@ -1,0 +1,7 @@
+{
+    "utcOffset": -7,
+    "initialStations": {
+        "origin": "ctsf",
+        "dest": "ctpa"
+    }
+}
