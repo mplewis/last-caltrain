@@ -1,0 +1,52 @@
+body {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+#ticket {
+  margin: 20px auto;
+  width: 200px;
+  height: 300px;
+  border: 1px solid rgba(0,0,0,0.3);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+#ticket .expiry {
+  color: #fff;
+  background-color: #000;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+}
+#ticket .col-left,
+#ticket .col-right {
+  display: inline-block;
+  vertical-align: top;
+}
+#ticket .col-left {
+  width: 100px;
+  float: left;
+  text-align: right;
+}
+#ticket .col-right {
+  float: left;
+  margin-left: 35px;
+}
+#ticket .zone-text {
+  margin: 0;
+  font-size: 32px;
+}
+#ticket .zone-text.top {
+  margin-top: 15px;
+}
+#ticket .to-text {
+  margin: 8px 0;
+  font-size: 27.428571428571427px;
+}
+#ticket .zone-num {
+  font-size: 96px;
+  margin: 0;
+  margin-top: -30px;
+}

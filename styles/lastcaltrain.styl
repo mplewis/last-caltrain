@@ -1,0 +1,53 @@
+ZONE_NUM_HEIGHT = 96px;
+ZONE_TEXT_HEIGHT = ZONE_NUM_HEIGHT / 3;
+TO_TEXT_HEIGHT = ZONE_NUM_HEIGHT / 3.5;
+
+body
+  width: 400px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 40px
+  margin-bottom: 40px
+  text-align: center
+
+#ticket
+  margin: 20px auto
+  width: 200px
+  height: 300px
+  border: 1px solid rgba(0, 0, 0, 0.3)
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-weight: 600
+
+  .expiry
+    color: #fff
+    background-color: #000
+    font-family: "Arial Narrow", Arial, sans-serif
+    font-weight: 400
+
+  .col-left, .col-right
+    display: inline-block
+    vertical-align: top
+
+  .col-left
+    width: 100px
+    float: left
+    text-align: right
+
+  .col-right
+    float: left
+    margin-left: 35px
+
+  .zone-text
+    margin: 0
+    font-size: ZONE_TEXT_HEIGHT
+  .zone-text.top
+    margin-top: 15px
+
+  .to-text
+    margin: 8px 0;
+    font-size: TO_TEXT_HEIGHT
+
+  .zone-num
+    font-size: ZONE_NUM_HEIGHT
+    margin: 0
+    margin-top: -30px
