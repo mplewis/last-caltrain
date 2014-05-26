@@ -58,7 +58,9 @@ function bindInputs() {
   });
   $('#button-print').click(function() {
     dom.static.ticket
-      .transition({y: 0, rotate: '0deg'}, 0, 'linear') // restart
+      .transition({opacity: 0}, 750, 'easeInOutSine') // fade out existing ticket
+      .transition({y: 0, rotate: '0deg'}, 250) // move to start once ticket fades out
+      .transition({opacity: 1}, 0) // fade back in once ticket is hidden
       .transition({y: 100}, 400, 'linear') // out
       .transition({y: 100}, 500, 'linear') // delay
       .transition({y: 80}, 200, 'linear') // in a bit
