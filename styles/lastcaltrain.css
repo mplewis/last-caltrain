@@ -33,9 +33,9 @@ body {
   height: 300px;
   margin-top: -350px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.5);
-  box-shadow: 0px 4px 30px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.5);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
@@ -48,8 +48,8 @@ body {
 }
 #ticket .header {
   font-size: 28px;
-  margin-top: 10px;
-  margin-bottom: -10px;
+  margin-bottom: -16px;
+  padding-top: 6px;
 }
 #ticket .footer {
   position: relative;
