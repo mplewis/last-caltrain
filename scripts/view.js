@@ -58,11 +58,15 @@ function bindInputs() {
   });
   $('#button-print').click(function() {
     dom.static.ticket
-      .transition({y: 0})
-      .transition({y: 100})
-      .transition({y: 90})
-      .transition({y: 200})
-      .transition({y: 190})
-      .transition({y: 375});
+      .transition({y: 0, rotate: '0deg'}, 0, 'linear') // restart
+      .transition({y: 100}, 400, 'linear') // out
+      .transition({y: 100}, 500, 'linear') // delay
+      .transition({y: 80}, 200, 'linear') // in a bit
+      .transition({y: 80}, 600, 'linear') // delay
+      .transition({y: 175}, 600, 'linear') // out more
+      .transition({y: 175}, 200, 'linear') // delay
+      .transition({y: 200}, 500, 'linear') // out more
+      .transition({y: 200}, 800, 'linear') // delay
+      .transition({y: 375, rotate: '-5deg'}, 500, 'easeOutExpo'); // spit it out
   });
 }
