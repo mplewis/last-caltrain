@@ -3,9 +3,12 @@ $.timeago.settings.allowFuture = true;
 var dom = {
   inputContainer: {
     origin: $('#station-origin'),
-    dest: $('#station-dest')
+    dest: $('#station-dest'),
   },
-  input: {}
+  input: {},
+  static: {
+    ticket: $('#ticket')
+  }
 };
 
 var touched = {
@@ -46,11 +49,20 @@ var changeHandler = function(name) {
   }
 };
 
-function watchDropdowns() {
+function bindInputs() {
   dom.input.origin.change(function() {
     changeHandler('origin');
   });
   dom.input.dest.change(function() {
     changeHandler('dest');
+  });
+  $('#button-print').click(function() {
+    dom.static.ticket
+      .transition({y: 0})
+      .transition({y: 100})
+      .transition({y: 90})
+      .transition({y: 200})
+      .transition({y: 190})
+      .transition({y: 375});
   });
 }

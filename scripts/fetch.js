@@ -6,7 +6,7 @@ $('document').ready(function(){
     $.getJSON('data/caltrain.json', function(data) {
       populateDropdowns(data.stations, data.stationDisplayOrder);
       initializeTimetable(data.latestDepartures);
-      watchDropdowns();
+      bindInputs();
     });
   });
 });

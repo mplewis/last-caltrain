@@ -1,22 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=VT323)
+
+BODY_WIDTH = 400px
+NEGATIVE_TOP_OFFSET = -350px
 ZONE_NUM_HEIGHT = 96px;
 ZONE_TEXT_HEIGHT = ZONE_NUM_HEIGHT / 3;
 TO_TEXT_HEIGHT = ZONE_NUM_HEIGHT / 3.5;
 
 body
-  width: 400px
+  width: BODY_WIDTH
   margin-left: auto
   margin-right: auto
   margin-top: 40px
   margin-bottom: 40px
   text-align: center
 
+#inputs
+  position: relative
+  z-index: 3
+
+#ticket-hider
+  position: relative
+  z-index: 2
+  background-color: #fff
+  height: 400px
+  width: BODY_WIDTH
+  margin-top: NEGATIVE_TOP_OFFSET
+  -webkit-box-shadow: 0px 25px 25px -25px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 25px 25px -25px rgba(0, 0, 0, 1);
+  box-shadow: 0px 25px 25px -25px rgba(0, 0, 0, 1);
+
 #ticket
-  margin: 20px auto
+  position: relative
+  z-index: -1
+  display: block
+  margin-top: -380px
+  margin-left: auto
+  margin-right: auto
   width: 200px
   height: 300px
-  border: 1px solid rgba(0, 0, 0, 0.3)
+  margin-top: NEGATIVE_TOP_OFFSET
+  background-color: #fff
+  -webkit-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.5);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   font-weight: 600
+
+  .logo
+    position: absolute
+    margin-left: -35px
+    margin-top: 80px
+    opacity: 0.2
+    z-index: -1
+
+  .header
+    font-size: 28px
+    margin-top: 10px
+    margin-bottom: -10px
+
+  .footer
+    position: relative
+    display: inline-block
+    float: left
+    font-family: 'VT323', sans-serif
+    font-size: 13px
+    text-align: left
+    margin-left: 3px
+    margin-top: 21px
 
   .expiry
     color: #fff

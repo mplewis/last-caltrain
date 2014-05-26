@@ -5,11 +5,16 @@
     <link rel="stylesheet" href="styles/lastcaltrain.css">
   </head>
   <body>
-    <div id="station-origin"></div>
-    <div id="station-dest"></div>
+    <div id="inputs">
+      <div id="station-origin"></div>
+      <div id="station-dest"></div>
+      <button id="button-print">Print Ticket</button>
+    </div>
+    <div id="ticket-hider"></div>
     <div id="ticket">
+      <img src="images/caltrain_logo.svg" class="logo">
       <p class="header">ONE-WAY</p>
-      <p class="expiry">EXP 7 APR 10 5:14 PM</p>
+      <p class="expiry">BOARD 7 APR 10 5:14 PM</p>
       <div class="col-left">
         <p class="zone-text top">ZONE</p>
         <p class="to-text">to</p>
@@ -19,11 +24,13 @@
         <p class="zone-num">1</p>
         <p class="zone-num">4</p>
       </div>
+      <p class="footer">043122052 jpb050 125546 $12.00</p>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js"></script>
     <script src="scripts/logic.js"></script>
     <script src="scripts/view.js"></script>
     <script src="scripts/fetch.js"></script>
