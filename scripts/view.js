@@ -58,6 +58,7 @@ function bindInputs() {
   });
   $('#button-print').click(function() {
     dom.static.ticket
+      .clearQueue()
       .transition({opacity: 0}, 750, 'easeInOutSine') // fade out existing ticket
       .transition({y: 0, rotate: '0deg'}, 250) // move to start once ticket fades out
       .transition({opacity: 1}, 0) // fade back in once ticket is hidden
