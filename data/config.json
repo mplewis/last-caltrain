@@ -1,7 +1,11 @@
 {
     "utcOffset": -7,
-    "initialStations": {
+    "defaultStations": {
         "origin": "ctsf",
         "dest": "ctpa"
+    },
+    "geolocDest": {
+        "default": "ctsf",
+        "fallback": "ctsj"
     }
 }
