@@ -6,7 +6,6 @@ function initializeTimetable(tt) {
   timetable = tt;
   refDay = new Date();
   refDay.setUTCHours(-utcOffset, 0, 0, 0);
-  console.log(refDay);
 }
 
 function getLastDepart(origin, dest, isWeekday) {
