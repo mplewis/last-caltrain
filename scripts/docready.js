@@ -1,8 +1,10 @@
+var stations;
+
 $('document').ready(function(){
   fetchConfig(function(configData) {
     var config = configData;
     fetchCaltrainData(function(caltrainData) {
-      var stations = caltrainData.stations;
+      stations = caltrainData.stations;
       populateDropdowns(stations, caltrainData.stationDisplayOrder);
       initializeTimetable(caltrainData.latestDepartures);
       bindInputs();
@@ -28,6 +30,9 @@ $('document').ready(function(){
           } else {
             setDestById(config.geolocDest.default);
           }
+          touched.origin = getOriginStation().id;
+          touched.dest = getDestStation().id;
+          renderTime();
           printTicket();
         } else {
           console.log('No geolocation available.');

@@ -5,11 +5,18 @@ var dom = {
     origin: $('#station-origin'),
     dest: $('#station-dest'),
   },
-  input: {},
+  input: {
+    origin: null,
+    dest: null
+  },
   static: {
     ticket: $('#ticket'),
     printButton: $('#button-print'),
-    expiryText: $('.expiry')
+    expiryText: $('.expiry'),
+    zoneText: {
+      origin: $('.zone-num.origin'),
+      dest: $('.zone-num.dest')
+    }
   }
 };
 
@@ -32,7 +39,9 @@ function populateDropdowns(stations, order) {
   dom.input.dest = $(dom.inputContainer.dest.find('select')[0]);
 }
 
-function renderTime(time) {
+function renderTime() {
+  console.log(touched.origin, touched.dest);
+  var time = getLastDepart(touched.origin, touched.dest, true);
   if (time) {
     var absTimeStr = moment(time).format("h:mm a");
     var relTimeStr = $.timeago(time);
@@ -46,8 +55,7 @@ function renderTime(time) {
 function changeHandler(name) {
   touched[name] = dom.input[name].val();
   if (touched.origin && touched.dest) {
-    var lastDepart = getLastDepart(touched.origin, touched.dest, true);
-    renderTime(lastDepart);
+    renderTime();
   }
 }
 
@@ -59,6 +67,10 @@ function bindInputs() {
     changeHandler('dest');
   });
   $('#button-print').click(function() {
+    setTimeout(function() {
+      setExpiryText(new Date());
+      setZonesText(getOriginStation().zone, getDestStation().zone);
+    }, 1000);
     var angle = randInt(-5, 5) + 'deg';
     dom.static.ticket
       .clearQueue()
@@ -85,13 +97,27 @@ function setDestById(stationId) {
   dom.input.dest.val(stationId);
 }
 
+function getOriginStation() {
+  var stationId = dom.input.origin.val();
+  return stations[stationId];
+}
+
+function getDestStation() {
+  var stationId = dom.input.dest.val();
+  return stations[stationId];
+}
+
 function setExpiryText(targetDate) {
   var formatString = 'D MMM YY h:mm A';
   var boardText = 'BOARD ' + moment(targetDate).format(formatString).toUpperCase();
   dom.static.expiryText.text(boardText);
 }
 
+function setZonesText(origin, dest) {
+  dom.static.zoneText.origin.text(origin);
+  dom.static.zoneText.dest.text(dest);
+}
+
 function printTicket() {
-  setExpiryText(new Date());
   dom.static.printButton.click();
 }
